@@ -1,12 +1,14 @@
 import styles from "./page.module.scss";
-import {getEpisodesInfo, getSeriesInfo} from "@/app/_utils/get-series-info";
+import {SeriesService} from "@/app/_services/series.service";
 import Link from "next/link";
 import DOMPurify from "isomorphic-dompurify";
 import {Episode} from "@/app/_models/series-model";
 
 export default async function MainInfoPage() {
-  const info = await getSeriesInfo();
-  const episodes = await getEpisodesInfo();
+    const seriesService = new SeriesService();
+    
+  const info = await seriesService.getSeriesInfo();
+  const episodes = await seriesService.getEpisodesInfo();
   const cleanSummary = DOMPurify.sanitize(info.summary);
     
   return (
