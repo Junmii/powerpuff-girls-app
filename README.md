@@ -1,4 +1,6 @@
 # The Powerpuff Girls
+Author: Joy Krabbe
+
 This project is an assessement for a Frontend Developer role
 
 ## Starting up the project
