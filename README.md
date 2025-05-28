@@ -17,9 +17,19 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the page!
 
+## Testing the project
+
+If you want to run the tests:
+
+```bash
+npm run test
+```
+
 ## General info
 
-This project was created with Next.js 15, SCSS (or SaSS) and uses SSR.
+This project was created with Next.js 15, SCSS (or SaSS) and uses SSR. For the tests I used Jest.
+
+The pages are fully responsive and work on phones, tablets and laptops/desktops.
 
 ## Pages
 
@@ -43,4 +53,4 @@ This component is to be used when you need a navigation bar on a website :).
 
 ## Other packages used
 
-Aside from the basics I also installed SaSS and Isomorphic Dompurify (to make sure we don't have anyone injecting code on the site!)
+Aside from the basics I also installed Isomorphic Dompurify (to make sure we don't have anyone injecting code on the site!)

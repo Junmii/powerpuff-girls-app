@@ -10,15 +10,15 @@ interface EpisodePageParams {
     }>;
 }
 
-export default async function EpisodePage({ params }: EpisodePageParams) {
+export default async function EpisodePage({params}: EpisodePageParams) {
     const seriesService = new SeriesService();
-    
+
     const episodeId = await params;
     const episode = await seriesService.getSpecificEpisode(episodeId['episode-id']);
-    
+
     if (!episode) {
         return (
-            <NotFound />
+            <NotFound/>
         )
     }
 
@@ -34,7 +34,8 @@ export default async function EpisodePage({ params }: EpisodePageParams) {
                 <h1 className={styles.title}>{episode.name}</h1>
                 <div className={styles.summary}>
                     <div dangerouslySetInnerHTML={{__html: cleanSummary}}/>
-                    <span className={styles.seasonEpisode}>(Season <strong>{episode.season}</strong> episode <strong>{episode.number}</strong>)</span>
+                    <span
+                        className={styles.seasonEpisode}>(Season <strong>{episode.season}</strong> episode <strong>{episode.number}</strong>)</span>
                 </div>
             </div>
         </div>
