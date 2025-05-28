@@ -1,11 +1,17 @@
-﻿import {getSpecificEpisode} from "@/app/_utils/get-episode-info";
+﻿import {getSpecificEpisode} from "@/app/_utils/get-series-info";
 import styles from "./page.module.scss";
 import DOMPurify from "isomorphic-dompurify";
 import NotFound from "@/app/not-found";
 
-export default async function EpisodePage({ params }: any) {
+interface EpisodePageParams {
+    params: Promise<{
+        'episode-id': string;
+    }>;
+}
+
+export default async function EpisodePage({ params }: EpisodePageParams) {
     const episodeId = await params;
-    const episode = await getSpecificEpisode(episodeId["episode-id"]);
+    const episode = await getSpecificEpisode(episodeId['episode-id']);
     
     if (!episode) {
         return (
@@ -13,7 +19,7 @@ export default async function EpisodePage({ params }: any) {
         )
     }
 
-    const cleanSummary = DOMPurify.sanitize(episode.summary);
+    const cleanSummary = DOMPurify.sanitize(episode.summary ?? "");
     const altText = `Cover image of episode ${episode.number} of season ${episode.season} of The Powerpuff Girls`;
 
     return (

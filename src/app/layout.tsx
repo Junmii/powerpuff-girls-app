@@ -1,22 +1,5 @@
-import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/app/_components/navigation-bar";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "The Powerpuff Girls",
-  description: "A website with basic information about The Powerpuff Girls",
-};
 
 export default function RootLayout({
   children,
@@ -25,10 +8,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <NavigationBar />
-        {children}
-      </body>
+    <head>
+      <meta charSet="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>The Powerpuff Girls</title>
+      <meta name="description" content="A website with basic information about The Powerpuff Girls"/>
+    </head>
+    <body>
+    <nav>
+      <NavigationBar/>
+    </nav>
+    {children}
+    </body>
     </html>
   );
 }

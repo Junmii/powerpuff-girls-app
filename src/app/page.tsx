@@ -1,17 +1,8 @@
 import styles from "./page.module.scss";
-import {getEpisodesInfo} from "@/app/_utils/get-episode-info";
+import {getEpisodesInfo, getSeriesInfo} from "@/app/_utils/get-series-info";
 import Link from "next/link";
 import DOMPurify from "isomorphic-dompurify";
-import {Episode} from "@/app/_models/episode-model";
-
-export async function getSeriesInfo() {
-    try {
-        const response = await fetch('https://api.tvmaze.com/shows/6771');
-        return response.json();
-    } catch (error: any) {
-        return { error: error.message };
-    }
-}
+import {Episode} from "@/app/_models/series-model";
 
 export default async function MainInfoPage() {
   const info = await getSeriesInfo();

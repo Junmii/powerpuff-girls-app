@@ -39,7 +39,7 @@ This component is to be used when you want to show a visual representation of th
 ### NavigationBar
 
 This is the navigation bar of the website. This component provides the navigation across the main pages of the website.
-This component is to be used when you need a navigation bar on the website :).
+This component is to be used when you need a navigation bar on a website :).
 
 ## Other packages used
 
