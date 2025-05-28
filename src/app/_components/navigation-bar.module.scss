@@ -1,0 +1,26 @@
+﻿.navbar {
+  background-image: linear-gradient(to right, var(--dark-blue), var(--light-blue));
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 0.5rem;
+  
+  .navigationItem {
+    padding: 0.5rem 1.25rem;
+    background-color: var(--light-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-pink);
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    border-radius: 50px;
+    border: 3px solid white;
+    transition: background-color ease-in-out 0.3s;
+    
+    &:hover {
+      color: var(--dark-green);
+      background-color: var(--light-green);      
+    }
+  }
+}
