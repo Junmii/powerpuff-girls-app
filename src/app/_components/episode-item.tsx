@@ -1,8 +1,13 @@
 ﻿import styles from './episode-item.module.scss'
 import Link from "next/link";
 import placeholder from "@/app/_assets/ppg-placeholder.jpg"
+import {Episode} from "@/app/_models/series-model";
 
-export default function EpisodeItem({episode}: any) {    
+interface EpisodeItemProps {
+    episode: Episode
+}
+
+export default function EpisodeItem({episode}: EpisodeItemProps) {    
     return (
         <Link className={styles.episodeItemContainer} href={`/episodes/${episode.id}`}>
             <div>

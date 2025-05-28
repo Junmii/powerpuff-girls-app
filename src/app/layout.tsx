@@ -1,5 +1,6 @@
 import "./globals.css";
 import NavigationBar from "@/app/_components/navigation-bar";
+import React from "react";
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode; }>) {
     return (
